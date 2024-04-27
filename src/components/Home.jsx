@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import defaultIcon from "../img/default-icon.png";
+import "../styles/Home.css";
 
 function Home(props) {
   const [signedIn, setSignedIn] = useState(false);
@@ -26,7 +27,7 @@ function Home(props) {
       </header>
 
       <main>
-        <img src={defaultIcon} width="100" alt="icon" />
+        <img src={defaultIcon} alt="icon" />
         {signedIn ? (
           <button className="startBtn">Timeblock your day!</button>
         ) : (
