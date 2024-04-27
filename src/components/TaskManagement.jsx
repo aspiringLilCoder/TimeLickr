@@ -6,12 +6,32 @@ function TaskManagement(props) {
   const [showModal, setShowModal] = useState(false);
   const [taskContainerEmpty, setTaskContainerEmpty] = useState(true);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
+  const [websiteList, setWebsiteList] = useState([]);
 
   const nameRef = useRef(null);
   const allowOrBlockRef = useRef(null);
   const websiteRef = useRef(null);
   const startTimeRef = useRef(null);
   const endTimeRef = useRef(null);
+
+  const urlPattern =
+    /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(\/\S*)?$/;
+
+  function addWebsite(e) {
+    e.preventDefault();
+
+    const website = websiteRef.current.value;
+
+    if (!urlPattern.test(website)) {
+      websiteRef.current.classList.add("invalid");
+    } else {
+      websiteRef.current.classList.remove("invalid");
+      if (website) {
+        setWebsiteList((websiteList) => [...websiteList, website]);
+        websiteRef.current.value = "";
+      }
+    }
+  }
 
   return (
     <div>
@@ -128,7 +148,11 @@ function TaskManagement(props) {
                     </svg>
                   </div>
                 </div>
-                <ul></ul>
+                <ul>
+                  {websiteList.map((website, index) => (
+                    <li key={index}>{website}</li>
+                  ))}
+                </ul>
               </div>
             )}
 
