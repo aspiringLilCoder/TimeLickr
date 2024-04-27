@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "../styles/TaskManagement.css";
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,12 @@ function TaskManagement(props) {
   const [showModal, setShowModal] = useState(false);
   const [taskContainerEmpty, setTaskContainerEmpty] = useState(true);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
+
+  const nameRef = useRef(null);
+  const allowOrBlockRef = useRef(null);
+  const websiteRef = useRef(null);
+  const startTimeRef = useRef(null);
+  const endTimeRef = useRef(null);
 
   return (
     <div>
@@ -62,7 +68,7 @@ function TaskManagement(props) {
 
             <div className="input-container">
               <p className="label">Task Name:</p>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" required ref={nameRef} />
             </div>
 
             <div className="input-container">
@@ -80,6 +86,7 @@ function TaskManagement(props) {
                     setWhitelistWebsites(false);
                   }
                 }}
+                ref={allowOrBlockRef}
               >
                 <option value="">Select...</option>
                 <option value="allow">Whitelist</option>
@@ -94,7 +101,7 @@ function TaskManagement(props) {
                     {whitelistWebsites ? "Whitelist" : "Blocklist"} websites
                   </p>
                   <div className="website-input-container">
-                    <input type="text" name="website-input" />
+                    <input type="text" name="website-input" ref={websiteRef} />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -127,9 +134,14 @@ function TaskManagement(props) {
             <div className="input-container">
               <p className="label">Time:</p>
               <div id="time-input-container">
-                <input type="time" name="start-time" required />
+                <input
+                  type="time"
+                  name="start-time"
+                  required
+                  ref={startTimeRef}
+                />
                 <p>to</p>
-                <input type="time" name="end-time" required />
+                <input type="time" name="end-time" required ref={endTimeRef} />
               </div>
             </div>
 
