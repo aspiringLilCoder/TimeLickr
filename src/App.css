@@ -1,0 +1,10 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  width: 325px;
+  height: 550px;
+  border: 1px solid black;
+  color: #333;
+}
