@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function TaskManagement(props) {
   const [showModal, setShowModal] = useState(false);
-  const [taskContainerEmpty, setTaskContainerEmpty] = useState(true);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
   const [websiteList, setWebsiteList] = useState([]);
+  const [taskArray, setTaskArray] = useState([]);
 
   const nameRef = useRef(null);
   const allowOrBlockRef = useRef(null);
@@ -31,6 +31,44 @@ function TaskManagement(props) {
         websiteRef.current.value = "";
       }
     }
+  }
+
+  function taskSubmit(e) {
+    e.preventDefault();
+    setWhitelistWebsites("");
+    setShowModal(false);
+
+    const name = nameRef.current.value;
+    const allowOrBlock = allowOrBlockRef.current.value;
+    const startTime = startTimeRef.current.value;
+    const endTime = endTimeRef.current.value;
+
+    const startDate = new Date();
+    const [startHours, startMinutes] = startTime.split(":").map(Number);
+    startDate.setHours(startHours);
+    startDate.setMinutes(startMinutes);
+
+    const endDate = new Date();
+    const [endHours, endMinutes] = endTime.split(":").map(Number);
+    endDate.setHours(endHours);
+    endDate.setMinutes(endMinutes);
+
+    setTaskArray((taskArray) => {
+      let newArray = [
+        ...taskArray,
+        {
+          name: name,
+          allowOrBlock: allowOrBlock,
+          startTime: startDate,
+          endTime: endDate,
+          websiteList: websiteList,
+        },
+      ];
+
+      newArray.sort((a, b) => a.startTime - b.startTime);
+
+      return newArray;
+    });
   }
 
   return (
@@ -65,9 +103,26 @@ function TaskManagement(props) {
           + Add a Task
         </button>
 
-        {!taskContainerEmpty && (
+        {taskArray.length !== 0 && (
           <>
-            <div className="taskContainer"></div>
+            <div className="taskContainer">
+              {taskArray.map((task, index) => (
+                <div key={index} className="task">
+                  <p>
+                    {task.startTime.toLocaleTimeString([], {
+                      hour: "numeric",
+                      minute: "2-digit",
+                    })}{" "}
+                    to{" "}
+                    {task.endTime.toLocaleTimeString([], {
+                      hour: "numeric",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                  <p>{task.name}</p>
+                </div>
+              ))}
+            </div>
 
             <button className="doneBtn">
               Done and Sync with Google calendar
@@ -77,7 +132,7 @@ function TaskManagement(props) {
       </main>
 
       {showModal && (
-        <form id="modal">
+        <form id="modal" onSubmit={taskSubmit}>
           <div id="modal-content">
             <div id="modal-header">
               <span id="close" onClick={() => setShowModal(false)}>
