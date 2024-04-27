@@ -54,7 +54,9 @@ function TaskManagement(props) {
         <form id="modal">
           <div id="modal-content">
             <div id="modal-header">
-              <span id="close">&times;</span>
+              <span id="close" onClick={() => setShowModal(false)}>
+                &times;
+              </span>
               <p>Task Details</p>
             </div>
 
