@@ -36,20 +36,6 @@ main {
   background-color: #7c9fad;
 }
 
-#done-btn {
-  display: none;
-  float: right;
-  margin-top: 20px;
-
-  width: 70px;
-  height: 30px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  background-color: #87ff83;
-
-  font-size: 13px;
-  text-align: center;
-  cursor: pointer;
 .taskContainer {
   display: flex;
   flex-direction: column;
@@ -78,6 +64,27 @@ main {
 
 .taskContainer p:nth-of-type(2) {
   color: blue;
+}
+
+.doneBtn {
+  float: right;
+  margin-top: 20px;
+
+  width: 100%;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #87ff83;
+
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+}
+.doneBtn:hover {
+  background-color: #65c262;
+}
+.doneBtn:active {
+  background-color: #81c67f;
 }
 
 /* New Task Creation Modal */
