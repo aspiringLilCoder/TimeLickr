@@ -1,10 +1,7 @@
-import React, { useState } from "react";
 import defaultIcon from "../img/default-icon.png";
 import "../styles/Home.css";
 
-function Home(props) {
-  const [signedIn, setSignedIn] = useState(false);
-
+function Home({ handleSignIn, signedIn }) {
   return (
     <div>
       <header>
@@ -29,10 +26,10 @@ function Home(props) {
       <main>
         <img src={defaultIcon} alt="icon" />
         {signedIn ? (
-          <button className="startBtn">Timeblock your day!</button>
+            <button className="startBtn">Start timeblocking your day!</button>
         ) : (
-          <button className="signInBtn">
-            Sign in to your google calendar!
+          <button className="signInBtn" onClick={handleSignIn}>
+            Sign in to your google calendar
           </button>
         )}
       </main>
