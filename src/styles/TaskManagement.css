@@ -1,0 +1,185 @@
+/* Main Task Page */
+header {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+  font-weight: bold;
+  font-size: 15px;
+}
+svg:active {
+  opacity: 0.5;
+}
+
+main {
+  margin-top: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.addTaskBtn {
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+
+  background-color: #c1e5f1;
+  border: 2px solid #333;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.addTaskBtn:hover {
+  background-color: #bcecff;
+}
+.addTaskBtn:active {
+  background-color: #7c9fad;
+}
+
+#done-btn {
+  display: none;
+  float: right;
+  margin-top: 20px;
+
+  width: 70px;
+  height: 30px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #87ff83;
+
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.taskContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 50px;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.taskContainer p {
+  margin-left: 12px;
+}
+
+.taskContainer p:nth-of-type(2) {
+  color: blue;
+}
+
+/* New Task Creation Modal */
+
+#modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#modal-content {
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-height: 80%;
+
+  background-color: #fefefe;
+  border: 1px solid #888;
+
+  overflow-y: auto;
+  position: relative;
+}
+
+#modal-header {
+  display: flex;
+  align-items: center;
+}
+#close {
+  margin-right: 10px;
+
+  font-size: 28px;
+  font-weight: bold;
+}
+#close:hover,
+#close:focus {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  font-weight: 600;
+}
+input[type="text"] {
+  width: 100%;
+  height: 25px;
+}
+.website-input-container {
+  display: flex;
+}
+.website-add-btn {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin-top: 5px;
+}
+
+#time-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 220px;
+  height: 20px;
+}
+
+#save-task-button {
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+
+  font-size: 13px;
+  text-align: center;
+
+  background-color: #87ff83;
+  border: 2px solid #333;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+#save-task-button:hover {
+  background-color: #70df6c;
+}
+
+#save-task-button:active {
+  background-color: #7ea97c;
+}
+
+.invalid,
+.invalid:focus {
+  border: 1px solid red;
+  outline: none;
+}
