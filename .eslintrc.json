@@ -1,0 +1,15 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "webextensions": true
+  },
+  "globals": {
+    "chrome": true
+  },
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "requireConfigFile": false
+  }
+}
