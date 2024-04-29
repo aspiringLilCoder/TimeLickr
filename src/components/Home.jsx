@@ -2,7 +2,7 @@ import defaultIcon from "../img/default-icon.png";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
 
-function Home({ handleSignIn, signedIn }) {
+function Home() {
   return (
     <div>
       <header>
@@ -26,15 +26,9 @@ function Home({ handleSignIn, signedIn }) {
 
       <main>
         <img src={defaultIcon} alt="icon" />
-        {signedIn ? (
-          <Link to="/tasks">
-            <button className="startBtn">Start timeblocking your day!</button>
-          </Link>
-        ) : (
-          <button className="signInBtn" onClick={handleSignIn}>
-            Sign in to your google calendar
-          </button>
-        )}
+        <Link to="/tasks">
+          <button className="startBtn">Start timeblocking your day!</button>
+        </Link>
       </main>
     </div>
   );

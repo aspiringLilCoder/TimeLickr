@@ -124,9 +124,7 @@ function TaskManagement(props) {
               ))}
             </div>
 
-            <button className="doneBtn">
-              Done and Sync with Google calendar
-            </button>
+            <button className="doneBtn">Done</button>
           </>
         )}
       </main>
