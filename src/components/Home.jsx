@@ -26,9 +26,18 @@ function Home({ taskArray }) {
 
       <main>
         <img src={defaultIcon} alt="icon" />
-        <Link to="/tasks">
-          <button className="startBtn">Start timeblocking your day!</button>
-        </Link>
+        {taskArray.length === 0 ? (
+          <Link to="/tasks">
+            <button className="startBtn">Start timeblocking your day!</button>
+          </Link>
+        ) : (
+          <div>
+            <p className="taskDescription">
+              Next task: 11:00PM to 12:30PM Programming
+            </p>
+            <button className="editBtn">Click here to edit</button>
+          </div>
+        )}
       </main>
     </div>
   );
