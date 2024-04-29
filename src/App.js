@@ -12,6 +12,14 @@ import { useState } from "react";
 
 function App() {
   const [taskArray, setTaskArray] = useState([]);
+  function doneAddingTasks() {
+    /* global chrome */
+
+    chrome.storage.local.set({ key: taskArray }).then(() => {
+      console.log(taskArray);
+    });
+  }
+
   return (
     <>
       <Router>
@@ -23,6 +31,7 @@ function App() {
               <TaskManagement
                 taskArray={taskArray}
                 setTaskArray={setTaskArray}
+                doneAddingTasks={doneAddingTasks}
               />
             }
           />

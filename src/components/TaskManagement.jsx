@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "../styles/TaskManagement.css";
 import { Link } from "react-router-dom";
 
-function TaskManagement({ taskArray, setTaskArray }) {
+function TaskManagement({ taskArray, setTaskArray, doneAddingTasks }) {
   const [showModal, setShowModal] = useState(false);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
   const [websiteList, setWebsiteList] = useState([]);
@@ -122,8 +122,11 @@ function TaskManagement({ taskArray, setTaskArray }) {
                 </div>
               ))}
             </div>
-
-            <button className="doneBtn">Done</button>
+            <Link to="/">
+              <button className="doneBtn" onClick={doneAddingTasks}>
+                Done
+              </button>
+            </Link>
           </>
         )}
       </main>
