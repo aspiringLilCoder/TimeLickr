@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Home({ taskArray }) {
   return (
     <div>
-      <header>
+      <header className="homeHeader">
         <h1>TimeLickr</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ function Home({ taskArray }) {
         </svg>
       </header>
 
-      <main>
+      <main className="homeMain">
         <img src={defaultIcon} alt="icon" />
         {taskArray.length === 0 ? (
           <Link to="/tasks">

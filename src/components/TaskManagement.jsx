@@ -72,7 +72,7 @@ function TaskManagement({ taskArray, setTaskArray }) {
 
   return (
     <div>
-      <header>
+      <header className="taskManagementHeader">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ function TaskManagement({ taskArray, setTaskArray }) {
 
         <p>Timeblock your day</p>
       </header>
-      <main>
+      <main className="taskManagmentMain">
         <button
           className="addTaskBtn"
           onClick={() => {

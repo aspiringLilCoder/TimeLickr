@@ -1,4 +1,4 @@
-header {
+.homeHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,7 @@ svg:active {
   opacity: 0.5;
 }
 
-main {
+.homeMain {
   display: flex;
   justify-content: center;
   align-items: center;

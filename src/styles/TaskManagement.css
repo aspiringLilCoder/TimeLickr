@@ -3,7 +3,7 @@ div {
   margin: 0;
 }
 
-header {
+.taskManagementHeader {
   display: flex;
   align-items: center;
   margin-bottom: 0;
@@ -16,7 +16,7 @@ svg:active {
   opacity: 0.5;
 }
 
-main {
+.taskManagmentMain {
   margin-top: 0;
   margin-left: 20px;
   margin-right: 20px;
