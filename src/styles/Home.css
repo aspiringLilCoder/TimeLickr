@@ -41,12 +41,10 @@ img {
 
   background-color: #fff;
 }
-
 .startBtn:hover {
   background-color: #ff7f7f;
   color: #fff;
 }
-
 .startBtn:active {
   background-color: #ffbebe;
 }
