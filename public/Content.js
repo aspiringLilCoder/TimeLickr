@@ -15,7 +15,9 @@ chrome.storage.local.get(["key"]).then((result) => {
       task.websiteList.forEach((website) => {
         if (allowOrBlock == "allow") {
           if (website === fullURL || website === shortURL) {
+            console.log("in whitelist");
           } else {
+            console.log("not in whitelist");
             document.body.innerHTML =
               '<div style="color:white; display: flex; align-items: center; justify-content: center; position:absolute;width:100%;height:100%;z-index:100;background-color:black;top:0;left:0;">Get back to work :)</div>';
           }
