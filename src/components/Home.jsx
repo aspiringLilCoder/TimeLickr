@@ -2,7 +2,7 @@ import defaultIcon from "../img/default-icon.png";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home({ taskArray }) {
   return (
     <div>
       <header>

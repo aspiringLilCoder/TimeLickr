@@ -8,14 +8,24 @@ import {
 
 import Home from "./components/Home";
 import TaskManagement from "./components/TaskManagement";
+import { useState } from "react";
 
 function App() {
+  const [taskArray, setTaskArray] = useState([]);
   return (
     <>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/tasks" element={<TaskManagement />} />
+          <Route exact path="/" element={<Home taskArray={taskArray} />} />
+          <Route
+            path="/tasks"
+            element={
+              <TaskManagement
+                taskArray={taskArray}
+                setTaskArray={setTaskArray}
+              />
+            }
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

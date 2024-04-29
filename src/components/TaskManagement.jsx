@@ -2,11 +2,10 @@ import React, { useRef, useState } from "react";
 import "../styles/TaskManagement.css";
 import { Link } from "react-router-dom";
 
-function TaskManagement(props) {
+function TaskManagement({ taskArray, setTaskArray }) {
   const [showModal, setShowModal] = useState(false);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
   const [websiteList, setWebsiteList] = useState([]);
-  const [taskArray, setTaskArray] = useState([]);
 
   const nameRef = useRef(null);
   const allowOrBlockRef = useRef(null);
