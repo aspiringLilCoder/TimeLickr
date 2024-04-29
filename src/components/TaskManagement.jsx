@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/TaskManagement.css";
 import { Link } from "react-router-dom";
 
-function TaskManagement({ taskArray, setTaskArray, doneAddingTasks }) {
+function TaskManagement({ taskArray, setTaskArray }) {
   const [showModal, setShowModal] = useState(false);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
   const [websiteList, setWebsiteList] = useState([]);
@@ -52,21 +52,35 @@ function TaskManagement({ taskArray, setTaskArray, doneAddingTasks }) {
     endDate.setHours(endHours);
     endDate.setMinutes(endMinutes);
 
+    console.log(startDate);
+
     setTaskArray((taskArray) => {
       let newArray = [
         ...taskArray,
         {
           name: name,
           allowOrBlock: allowOrBlock,
-          startTime: startDate,
-          endTime: endDate,
+          startTime: startDate.toLocaleString(),
+          endTime: endDate.toLocaleString(),
           websiteList: websiteList,
         },
       ];
 
       newArray.sort((a, b) => a.startTime - b.startTime);
 
+      console.log(websiteList);
+
       return newArray;
+    });
+
+    setWebsiteList([]);
+  }
+
+  function doneAddingTasks() {
+    /* global chrome */
+
+    chrome.storage.local.set({ key: taskArray }).then(() => {
+      console.log(taskArray);
     });
   }
 
@@ -108,12 +122,12 @@ function TaskManagement({ taskArray, setTaskArray, doneAddingTasks }) {
               {taskArray.map((task, index) => (
                 <div key={index} className="task">
                   <p>
-                    {task.startTime.toLocaleTimeString([], {
+                    {new Date(task.startTime).toLocaleTimeString([], {
                       hour: "numeric",
                       minute: "2-digit",
                     })}{" "}
                     to{" "}
-                    {task.endTime.toLocaleTimeString([], {
+                    {new Date(task.endTime).toLocaleTimeString([], {
                       hour: "numeric",
                       minute: "2-digit",
                     })}
