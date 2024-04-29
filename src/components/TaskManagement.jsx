@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "../styles/TaskManagement.css";
 import { Link } from "react-router-dom";
 
-function TaskManagement({ taskArray, setTaskArray }) {
+function TaskManagement({ taskArray, setTaskArray, doneAddingTasks }) {
   const [showModal, setShowModal] = useState(false);
   const [whitelistWebsites, setWhitelistWebsites] = useState("");
   const [websiteList, setWebsiteList] = useState([]);
@@ -52,8 +52,6 @@ function TaskManagement({ taskArray, setTaskArray }) {
     endDate.setHours(endHours);
     endDate.setMinutes(endMinutes);
 
-    console.log(startDate);
-
     setTaskArray((taskArray) => {
       let newArray = [
         ...taskArray,
@@ -68,20 +66,10 @@ function TaskManagement({ taskArray, setTaskArray }) {
 
       newArray.sort((a, b) => a.startTime - b.startTime);
 
-      console.log(websiteList);
-
       return newArray;
     });
 
     setWebsiteList([]);
-  }
-
-  function doneAddingTasks() {
-    /* global chrome */
-
-    chrome.storage.local.set({ key: taskArray }).then(() => {
-      console.log(taskArray);
-    });
   }
 
   return (

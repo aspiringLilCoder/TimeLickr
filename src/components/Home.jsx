@@ -1,8 +1,9 @@
+import { useState } from "react";
 import defaultIcon from "../img/default-icon.png";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
 
-function Home({ taskArray }) {
+function Home({ taskArray, taskName, taskState, taskTime }) {
   return (
     <div>
       <header className="homeHeader">
@@ -33,8 +34,10 @@ function Home({ taskArray }) {
         ) : (
           <div className="taskDescriptionContainer">
             <div className="taskDescription">
-              <p>Next task: Programming</p>
-              <p>(11:00PM to 12:30PM)</p>
+              <p>
+                {taskState} {taskName}
+              </p>
+              <p>{taskTime}</p>
             </div>
             <p className="editInstruction">Click the above to view details</p>
           </div>
