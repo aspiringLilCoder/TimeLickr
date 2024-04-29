@@ -31,11 +31,12 @@ function Home({ taskArray }) {
             <button className="startBtn">Start timeblocking your day!</button>
           </Link>
         ) : (
-          <div>
-            <p className="taskDescription">
-              Next task: 11:00PM to 12:30PM Programming
-            </p>
-            <button className="editBtn">Click here to edit</button>
+          <div className="taskDescriptionContainer">
+            <div className="taskDescription">
+              <p>Next task: Programming</p>
+              <p>(11:00PM to 12:30PM)</p>
+            </div>
+            <p className="editInstruction">Click the above to view details</p>
           </div>
         )}
       </main>
