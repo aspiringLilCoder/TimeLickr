@@ -16,7 +16,7 @@ function App() {
 
   const config = {
     clientId:
-      "1009873572568-aabaotfa961ki1acr2a78en3dsaunnkb.apps.googleusercontent.com",
+      "1009873572568-trr3tso3sogl1o18qfr4ekptpq29pjit.apps.googleusercontent.com",
     apiKey: "AIzaSyDXfdYSE0GiIzhO7i_Wu-aKkEVx9GrwbHs",
     scope: "https://www.googleapis.com/auth/calendar",
     discoveryDocs: [
