@@ -14,9 +14,9 @@ chrome.storage.local.get(["key"]).then((result) => {
       const allowOrBlock = task.allowOrBlock;
       const html =
         '<div style="color:#333; display: flex; flex-direction: column; align-items: center; justify-content: center; position:absolute; width:100%; height:100%; z-index:100; background-color:#BAF0FA; top:0; left:0;">' +
-        `<p style="font-weight: bold; margin-top: 10px; font-size: 30px">Time is lickin\' by! Get back to work until ${new Date(
-          task.endTime
-        ).toLocaleTimeString([], {
+        `<p style="font-weight: bold; margin-top: 10px; font-size: 30px; text-align: center">This website is blocked! Time is lickin\' by! Get back to work (${
+          task.name
+        }) until ${new Date(task.endTime).toLocaleTimeString([], {
           hour: "numeric",
           minute: "2-digit",
         })} ;)</p>` +
