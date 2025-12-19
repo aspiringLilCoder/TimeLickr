@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+## Inspiration 🌟
+TimeLickr was born out of my own struggles with easily getting distracted by social media, especially as an online student.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What it does 🚀
+TimeLickr is a Chrome extension designed to easily plan your day and be more productive by enabling users to schedule tasks and block distracting websites . By integrating task management and website blocking functionalities, TimeLickr empowers users to take control of their online habits and make the most out of their time.
 
-## Available Scripts
+## How I built it 💻
+I built TimeLickr using React. React provided the perfect framework for developing a dynamic and responsive Chrome extension that meets the needs of modern users.
 
-In the project directory, you can run:
+## Challenges I ran into🐛
+Building TimeLickr had a fair share (I mean TON) of bugs but, I remained determined and persevered through which has led to a lot of new knowledge and skills gained.
 
-### `npm start`
+## Accomplishments that I'm proud of 🎉
+I'm proud of successfully creating TimeLickr—a Chrome extension that I personally wanted. It was also a very fulfilling experience to develop something I wanted from scratch by myself and make it actually work.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What I learned 📚
+Through the process of building TimeLickr, I gained a lot of valuable knowledge, particularly regarding Chrome extension development. As someone who had never coded a chrome extension before, I now feel confident in my ability to navigate and code one again in the future!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## What's next for TimeLickr 🔮
+There are a lot of more functionality that TimeLickr could have. I would love to add better and more flexible scheduling options, the ability to create schedule templates for efficiency, implementing "strict" blocks to prevent editing, and allowing users to customize the block page to suit their preferences.
 
-### `npm test`
+One that I was going to add was integrating sync with Google calendar api, but I couldn't implement it in time, but I will definitely do so since, as someone who uses google calendar for everything, it is a need!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Built With
+chrome
+extension
+javascript
+localstorage
+manifest
+react
